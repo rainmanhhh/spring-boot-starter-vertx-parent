@@ -92,5 +92,5 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
-    <version>0.0.8-SNAPSHOT</version>
+    <version>0.0.8</version>
 </project>
