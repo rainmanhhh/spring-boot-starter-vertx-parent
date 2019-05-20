@@ -3,7 +3,6 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <artifactId>spring-boot-starter-vertx-parent</artifactId>
-
     <build>
         <plugins>
             <plugin>
@@ -75,9 +74,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <groupId>com.github.rainmanhhh</groupId>
+
     <modelVersion>4.0.0</modelVersion>
+    <name>spring-boot-starter-vertx-parent</name>
     <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
@@ -92,5 +92,5 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
-    <version>0.0.8</version>
+    <version>0.0.9-SNAPSHOT</version>
 </project>
