@@ -20,6 +20,9 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <show>private</show>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
