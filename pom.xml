@@ -88,12 +88,5 @@
         <springBootVersion>2.1.4.RELEASE</springBootVersion>
         <vertxVersion>3.7.0</vertxVersion>
     </properties>
-    <repositories>
-        <repository>
-            <id>jitpack</id>
-            <name>jitpack</name>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
     <version>0.0.9-SNAPSHOT</version>
 </project>
