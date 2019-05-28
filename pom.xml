@@ -85,7 +85,7 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springBootVersion>2.1.4.RELEASE</springBootVersion>
+        <springBootVersion>2.1.5.RELEASE</springBootVersion>
         <vertxVersion>3.7.0</vertxVersion>
     </properties>
     <version>0.0.9-SNAPSHOT</version>
