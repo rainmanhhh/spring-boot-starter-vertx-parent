@@ -88,5 +88,5 @@
         <springBootVersion>2.1.5.RELEASE</springBootVersion>
         <vertxVersion>3.7.0</vertxVersion>
     </properties>
-    <version>0.0.9-SNAPSHOT</version>
+    <version>0.0.9</version>
 </project>
