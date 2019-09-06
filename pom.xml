@@ -10,6 +10,11 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <build>
+    <testResources>
+      <testResource>
+        <directory>${project.basedir}/src/test/resources</directory>
+      </testResource>
+    </testResources>
     <plugins>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
