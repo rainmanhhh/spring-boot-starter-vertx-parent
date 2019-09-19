@@ -2,13 +2,63 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <artifactId>spring-boot-starter-vertx-parent</artifactId>
+  <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.1.8.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+  <groupId>com.github.rainmanhhh</groupId>
+  <artifactId>spring-boot-starter-vertx-parent</artifactId>
+  <version>0.0.12</version>
+  <name>spring-boot-starter-vertx-parent</name>
+  <packaging>pom</packaging>
+  <properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springBootVersion>2.1.8.RELEASE</springBootVersion>
+    <vertxVersion>3.8.1</vertxVersion>
+    <kotlin.version>1.3.50</kotlin.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <artifactId>jsr305</artifactId>
+      <groupId>com.google.code.findbugs</groupId>
+      <scope>provided</scope>
+      <version>3.0.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+    </dependency>
+  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- Import dependency management from Spring Boot -->
+        <artifactId>spring-boot-dependencies</artifactId>
+        <groupId>org.springframework.boot</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${springBootVersion}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <testResources>
       <testResource>
@@ -43,48 +93,29 @@
         </executions>
         <version>3.0.1</version>
       </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <configuration>
+          <args>
+            <arg>-Xjsr305=strict</arg>
+          </args>
+          <compilerPlugins>
+            <plugin>spring</plugin>
+          </compilerPlugins>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-allopen</artifactId>
+            <version>${kotlin.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <artifactId>spring-boot-configuration-processor</artifactId>
-      <groupId>org.springframework.boot</groupId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <artifactId>jsr305</artifactId>
-      <groupId>com.google.code.findbugs</groupId>
-      <scope>provided</scope>
-      <version>3.0.2</version>
-    </dependency>
-    <dependency>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <groupId>org.springframework.boot</groupId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <!-- Import dependency management from Spring Boot -->
-        <artifactId>spring-boot-dependencies</artifactId>
-        <groupId>org.springframework.boot</groupId>
-        <scope>import</scope>
-        <type>pom</type>
-        <version>${springBootVersion}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <groupId>com.github.rainmanhhh</groupId>
-
-  <modelVersion>4.0.0</modelVersion>
-  <name>spring-boot-starter-vertx-parent</name>
-  <packaging>pom</packaging>
-  <properties>
-    <java.version>1.8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springBootVersion>2.1.8.RELEASE</springBootVersion>
-    <vertxVersion>3.8.1</vertxVersion>
-  </properties>
-  <version>0.0.11</version>
 </project>
