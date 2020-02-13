@@ -1,26 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starters</artifactId>
-    <version>2.2.4.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
-  <groupId>com.github.rainmanhhh</groupId>
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>spring-boot-starter-vertx-parent</artifactId>
-  <version>0.0.16</version>
-  <name>spring-boot-starter-vertx-parent</name>
-  <packaging>pom</packaging>
-  <properties>
-    <java.version>1.8</java.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springBootVersion>2.2.4.RELEASE</springBootVersion>
-    <vertxVersion>3.8.5</vertxVersion>
-    <kotlin.version>1.3.61</kotlin.version>
-  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <forceJavacCompilerUse>true</forceJavacCompilerUse>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <show>private</show>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <id>attach-javadocs</id>
+          </execution>
+        </executions>
+        <version>3.0.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <id>attach-sources</id>
+          </execution>
+        </executions>
+        <version>3.0.1</version>
+      </plugin>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
+    <testResources>
+      <testResource>
+        <directory>${project.basedir}/src/test/resources</directory>
+      </testResource>
+    </testResources>
+  </build>
   <dependencies>
     <dependency>
       <artifactId>spring-boot-starter</artifactId>
@@ -53,55 +84,31 @@
         <type>pom</type>
         <version>${springBootVersion}</version>
       </dependency>
+      <dependency>
+        <artifactId>vertx-stack-depchain</artifactId>
+        <groupId>io.vertx</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${vertxVersion}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
-  <build>
-    <testResources>
-      <testResource>
-        <directory>${project.basedir}/src/test/resources</directory>
-      </testResource>
-    </testResources>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>8</source>
-          <target>8</target>
-          <forceJavacCompilerUse>true</forceJavacCompilerUse>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <show>private</show>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <id>attach-javadocs</id>
-          </execution>
-        </executions>
-        <version>3.0.1</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <id>attach-sources</id>
-          </execution>
-        </executions>
-        <version>3.0.1</version>
-      </plugin>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
+  <groupId>com.github.rainmanhhh</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <name>spring-boot-starter-vertx-parent</name>
+  <packaging>pom</packaging>
+  <parent>
+    <artifactId>spring-boot-starters</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath />
+    <version>2.2.4.RELEASE</version> <!-- lookup parent from repository -->
+  </parent>
+  <properties>
+    <java.version>1.8</java.version>
+    <kotlin.version>1.3.61</kotlin.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springBootVersion>2.2.4.RELEASE</springBootVersion>
+    <vertxVersion>3.8.5</vertxVersion>
+  </properties>
+  <version>0.0.17</version>
 </project>
