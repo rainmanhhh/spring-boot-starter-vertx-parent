@@ -97,18 +97,12 @@
   <modelVersion>4.0.0</modelVersion>
   <name>spring-boot-starter-vertx-parent</name>
   <packaging>pom</packaging>
-  <parent>
-    <artifactId>spring-boot-starters</artifactId>
-    <groupId>org.springframework.boot</groupId>
-    <relativePath />
-    <version>2.2.4.RELEASE</version> <!-- lookup parent from repository -->
-  </parent>
   <properties>
     <java.version>1.8</java.version>
-    <kotlin.version>1.3.61</kotlin.version>
+    <kotlin.version>1.3.72</kotlin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <springBootVersion>2.2.4.RELEASE</springBootVersion>
-    <vertxVersion>3.8.5</vertxVersion>
+    <springBootVersion>2.3.1.RELEASE</springBootVersion>
+    <vertxVersion>4.0.0-milestone5</vertxVersion>
   </properties>
   <version>0.0.17</version>
 </project>
